@@ -1,4 +1,11 @@
-/******* Change Box Model ***************/
+/********* CSS Custom Properties *********/
+
+:root {
+  --accent-color: #4b96d7;
+
+}
+
+/*******_______ Change Box Model _______***************/
 *,
 *:before,
 *:after {
