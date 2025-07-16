@@ -1,8 +1,8 @@
 CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
-ALTER TYPE public.account_type
-    OWNER TO cse340;
+--ALTER TYPE public.account_type
+--    OWNER TO cse340;
 
 -- Table structure for table 'Classification' -------------------
 CREATE TABLE public.classification(
@@ -49,9 +49,9 @@ CREATE TABLE IF NOT EXISTS public.account
 -- Data for table 'Classification'
 INSERT INTO public.classification (classification_name)
 VALUES ('Custom'),
-	('Sport')
-	('SUV')
-	('Truck')
+	('Sport'),
+	('SUV'),
+	('Truck'),
 	('Sedan');
 
 -- Data for table `inventory`
@@ -235,3 +235,30 @@ VALUES   (
     'White',
     5
   );
+
+
+-- Task ONE ---------------------
+
+-- Modify the "GM Hummer" record to read "a huge interior" rather than "small interiors" 
+--    using a single query. Explore the PostgreSQL Replace function 
+--    Do NOT retype the entire description as part of the query.. 
+--    It needs to be part of an Update query as shown in the code examples of this SQL Reading\
+
+UPDATE inventory
+SET inv_description = Replace(inv_description, 'small interiors', 'a huge interior')
+WHERE inv_model = 'Hummer';
+
+SELECT inv_make, inv_model, inv_description FROM public.inventory
+WHERE inv_model = 'Hummer';
+
+-- Update all records in the inventory table 
+--    to add "/vehicles" to the middle of the file path 
+--    in the inv_image and inv_thumbnail columns using a single query. 
+--    When done the path for both inv_image and inv_thumbnail should resemble this example: /images/vehicles/a-car-name.jpg
+
+UPDATE inventory
+SET inv_image = Replace(inv_image, 'images/', 'images/vehicles/'),
+    inv_thumbnail = Replace(inv_thumbnail, 'images/', 'images/vehicles/');
+
+SELECT * FROM inventory;
+

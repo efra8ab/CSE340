@@ -18,3 +18,5 @@ node_modules
 README.md
 
 .vscode/settings.json
+*.mov
+*.mp4
