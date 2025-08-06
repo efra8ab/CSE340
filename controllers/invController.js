@@ -37,7 +37,7 @@ invCont.buildByInvId = async function (req, res, next) {
     const title = `${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}`
     const nav = await utilities.getNav()
   
-    res.render("./inventory/detail", { title, nav, vehicle })
+    res.render("./inventory/details", { title, nav, vehicle })
   } catch (err) {
       next(err)
   }
