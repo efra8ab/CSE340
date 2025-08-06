@@ -7,3 +7,9 @@ const invController = require("../controllers/invController")
 router.get("/type/:classificationId", invController.buildByClassificationId);
 
 module.exports = router;
+
+// Route to build vehicle detail view
+router.get("/detail/:invId", invController.buildByInvId);
+
+// Route to 500 test
+router.get("/trigger-500", invController.trigger500);

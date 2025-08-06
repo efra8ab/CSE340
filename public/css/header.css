@@ -24,8 +24,14 @@
 }
 
 nav {
-    background-color: #1a1a2e;
+    background-color: #000000;
     padding: 10px 30px;
+}
+
+nav a:link,
+nav a:visited {
+  color: #fff;
+  text-decoration: none;
 }
 
 nav ul {

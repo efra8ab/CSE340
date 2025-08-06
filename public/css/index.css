@@ -129,3 +129,53 @@ body {
         padding: 10px;
     }
 }
+
+/*****_______ Vehicle Detail (inventory/details.ejs) _______*****/
+#inv-detail {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vehicle-detail {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.vehicle-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.vehicle-info h2 {
+    margin: 0 0 .5rem;
+    font-size: 1.75rem;
+}
+
+.vehicle-info .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: .25rem 0 .75rem;
+}
+
+.vehicle-info .specs {
+    list-style: none;
+    padding: 0;
+    margin: .5rem 0 1rem;
+}
+
+.vehicle-info .specs li {
+    margin: .25rem 0;
+}
+
+.vehicle-info .description {
+    line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+    .vehicle-detail {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
