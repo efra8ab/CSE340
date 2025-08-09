@@ -1,0 +1,95 @@
+/* Center the form on the page */
+form {
+    background-color: #395a7a;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 5rem auto;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: rgb(0, 0, 0);
+}
+
+/* Input fields */
+input[type="email"],
+input[type="password"],
+input[type="firstName"],
+input[type="lastName"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Submit button */
+button[type="submit"],
+button[type="showPassword"] {
+    display: block;
+    width: 50%;
+    margin: 0 auto 1rem;
+    padding: 0.75rem;
+    background-color: rgb(255, 62, 62);
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff3e3e7d;
+}
+
+/* Link to Register */
+p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(255, 62, 62);
+}
+
+/* Flash messages */
+
+#messages ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem auto;
+    max-width: 420px;
+}
+
+#messages ul li {
+        padding: 0.85rem 1.2rem;
+        margin-bottom: 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#messages ul.notice li,
+#messages ul.success li {
+    background-color: #d1f5d6;
+    color: #14532d;
+    border: 1px solid #7fe28a;
+}
+
+#messages ul.error li {
+    background-color: #fbe4e4;
+    color: #7c1a1a;
+    border: 1px solid #f1aaaa;
+}

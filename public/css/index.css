@@ -151,6 +151,11 @@ body {
 .vehicle-info h2 {
     margin: 0 0 .5rem;
     font-size: 1.75rem;
+    color: blue;
+}
+
+.namePrice a{
+    color: blue;
 }
 
 .vehicle-info .price {
