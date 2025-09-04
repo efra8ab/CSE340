@@ -4,3 +4,273 @@
 *:after {
   box-sizing: border-box;
 }
+
+/* Responsive stuff */
+@media (max-width: 768px) {
+  .hero_promo {
+    position: static;
+    max-width: 100%;
+    margin: 1rem auto 0 auto;
+    box-shadow: none;
+  }
+
+  .hero {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero_promo {
+    top: 15%;
+    left: 5%;
+    max-width: 250px;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero_promo {
+    top: 25%;
+    left: 12%;
+  }
+}
+
+@media (max-width: 600px){
+  .nav-list{
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.5rem;
+  }
+}
+
+/* Header */
+#top-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: #232634;
+  color: #fff;
+  border-radius: 6px 6px 0 0;
+}
+
+#top-header .siteName a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+#top-header .siteName a:hover {
+  color: #00a0b3;
+}
+
+#tools a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#tools a:hover {
+  background-color: #131722;
+  border-color: #00bcd4;
+}
+
+/* Main */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("/images/site/small_check.png");
+  background-size: cover;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border: 4px solid #00bcd4;
+  border-radius: 10px;
+  padding: 1rem 1.25rem 2rem;
+}
+
+/* Navigation styling */
+.site-nav {
+  margin: 0;
+}
+
+.nav-list {
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: #232634; 
+  border-radius: 0 0 4px 4px;
+}
+
+.nav-list a{
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  background: #131722;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 2rem;
+  background: #232634;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0 0 6px 6px;
+  text-align: center;
+}
+
+footer .copyright {
+  color: #fff;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.hero_media {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero_media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.hero_promo {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+}
+
+.hero_promo h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.hero_promo ul {
+  padding-left: 1.2rem;
+  margin: 0 0 1rem 0;
+}
+
+/* Button styling */
+button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0077cc;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Upgrades n Reviews section */
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.showcase__col h2 {
+  margin: 0 0 1rem 0;
+}
+
+/* Upgrades */
+.upgrades {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0;
+}
+
+.upgrade {
+  text-align: center;
+}
+
+.upgrade-card {
+  background: #02a9c7;
+  border-radius: 6px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upgrade-card img {
+  max-width: 90px;
+  height: auto;
+}
+
+.upgrade a {
+  display: inline-block;
+  margin-top: .5rem;
+  color: #2b6cb0;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Reviews list */
+.reviews {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
+}
+
+.reviews li {
+  margin: 0 0 1rem 0;
+}
+
+.reviews .rating {
+  color: #555;
+}
+
+@media (min-width: 768px) {
+  .showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+}
