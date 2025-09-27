@@ -2,7 +2,7 @@ CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
 ALTER TYPE public.account_type
-    OWNER TO cse340;
+    OWNER TO cse340_db;
 
 /* create tables */
 
@@ -252,3 +252,6 @@ AND inv_model = 'Hummer';
 UPDATE public.inventory
 SET inv_image = replace(inv_image, '/images', '/images/vehicles'),
 	inv_thumbnail = replace(inv_thumbnail, '/images', '/images/vehicles');
+
+SELECT *
+FROM public.inventory;
