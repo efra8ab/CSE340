@@ -17,3 +17,5 @@ node_modules
 
 # ignore video files
 *.mp4
+
+# ignore 
