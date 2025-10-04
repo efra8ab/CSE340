@@ -1,14 +1,18 @@
 # Content heading
-<% if (title) { %>
-    <h1>
-        <%= title %>
-    </h1>
-    <% } else { res.redirect('/') } %>
+<main class="classification-page">
+    <% if (title) { %>
+        <h1>
+            <%= title %>
+        </h1>
+        <% } else { res.redirect('/') } %>
 
 # Message block
 
 <%# messages() %>
 
 # Inventory items display
+    <section class="inventory-display">
+        <%- grid %>
+    </section>
 
-<%- grid %>
+</main> 
