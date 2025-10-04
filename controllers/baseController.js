@@ -6,4 +6,12 @@ baseController.buildHome = async function (req, res) {
   res.render("index", { title: "Home", nav });
 };
 
+baseController.triggerError = (req, res, next) => {
+  try {
+    throw new Error("Intentional server error for testing middleware!");
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = baseController;
