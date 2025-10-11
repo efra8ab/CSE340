@@ -94,3 +94,122 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Inventory Management Page */
+.management {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.management h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.lead {
+  text-align: center;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.mgmt-actions ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.mgmt-actions a {
+  background-color: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.mgmt-actions a:hover {
+  background-color: #005fa3;
+}
+
+/* Shared form styles for Add Classification & Add Inventory */
+.add-classification,
+.add-inventory {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.add-classification h1,
+.add-inventory h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* Error and hint styles */
+.errors {
+  background: #ffe8e8;
+  color: #a00;
+  border: 1px solid #e09;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.help,
+.hint {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.25rem;
+}

@@ -1,0 +1,17 @@
+<section class="management">
+    <h1>Inventory Management</h1>
+
+    <!-- Flash messages -->
+    <% if (locals && typeof messages==='function' ) { %>
+        <%- messages() %>
+            <% } %>
+
+                <p class="lead">Use the options below to manage classifications and vehicles.</p>
+
+                <nav class="mgmt-actions" aria-label="Inventory management actions">
+                    <ul>
+                        <li><a href="/inv/add-classification">Add New Classification</a></li>
+                        <li><a href="/inv/add-inventory">Add New Inventory</a></li>
+                    </ul>
+                </nav>
+</section>
