@@ -12,6 +12,9 @@ router.get("/type/:classificationId", invController.buildByClassificationId);
 // Route to build vehicle detail view
 router.get("/detail/:inv_id", invController.buildDetailView)
 
+// Protect administrative routes for authorized accounts only
+router.use(utilities.requireEmployeeOrAdmin)
+
 // Management landing (access via /inv/)
 router.get(
   "/",

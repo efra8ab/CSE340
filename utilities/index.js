@@ -133,6 +133,23 @@ Util.checkJWTToken = (req, res, next) => {
     req.flash("notice", "Please log in.")
     return res.redirect("/account/login")
   }
- }
+}
+
+/* ****************************************
+ *  Require Employee or Admin Account Type
+ * ************************************ */
+Util.requireEmployeeOrAdmin = async (req, res, next) => {
+  try {
+    const accountData = res.locals.accountData || {}
+    const allowedTypes = ["Employee", "Admin"]
+    if (res.locals.loggedin && allowedTypes.includes(accountData.account_type)) {
+      return next()
+    }
+    req.flash("notice", "You must be logged in with sufficient privileges to access that resource.")
+    return res.redirect("/account/login")
+  } catch (error) {
+    return next(error)
+  }
+}
 
 module.exports = Util;
