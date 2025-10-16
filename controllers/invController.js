@@ -191,8 +191,15 @@ invCont.buildDetailView = async function (req, res, next) {
     const nav = await utilities.getNav();
     const detail = await utilities.buildVehicleDetail(vehicle);
     const title = `${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}`;
+    const redirectTo = req.originalUrl;
 
-    return res.render("./inventory/detail", { title, nav, detail });
+    return res.render("./inventory/detail", {
+      title,
+      nav,
+      detail,
+      vehicle,
+      redirectTo
+    });
   } catch (err) {
     return next(err);
   }

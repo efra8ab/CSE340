@@ -14,6 +14,7 @@
   <h2>Welcome <%= firstName %></h2>
   <% if (account.account_id) { %>
     <p><a href="/account/update/<%= account.account_id %>">Update Account Information</a></p>
+    <p><a href="/account/favorites">View Saved Vehicles</a></p>
   <% } %>
   <% if (account.account_type === "Employee" || account.account_type === "Admin") { %>
     <h3>Inventory Management</h3>

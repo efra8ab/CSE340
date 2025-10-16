@@ -1,0 +1,27 @@
+<% /* week 6 enhancement view */ %>
+<div class="favorites-container">
+  <h1><%= title %></h1>
+  <%- messages() %>
+
+  <% if (favorites && favorites.length) { %>
+    <ul class="favorites-list">
+      <% favorites.forEach(item => { %>
+        <li class="favorite-row">
+          <div class="favorite-thumb">
+            <img src="<%= item.inv_thumbnail %>" alt="Thumbnail of <%= item.inv_year %> <%= item.inv_make %> <%= item.inv_model %>">
+          </div>
+          <div class="favorite-body">
+            <h2><%= item.inv_year %> <%= item.inv_make %> <%= item.inv_model %></h2>
+            <p>$<%= item.inv_price %></p>
+            <form action="/account/favorites/remove" method="post">
+              <input type="hidden" name="inv_id" value="<%= item.inv_id %>">
+              <button type="submit">Remove</button>
+            </form>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>You have not saved any vehicles yet.</p>
+  <% } %>
+</div>

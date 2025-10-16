@@ -16,6 +16,7 @@ const utilities = require("./utilities/");
 const session = require("express-session");
 const pool = require("./database/");
 const accountRoute = require('./routes/accountRoute');
+const favoriteRoute = require('./routes/favoriteRoute');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 
@@ -63,6 +64,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 // Account routes
 app.use("/account", require("./routes/accountRoute"))
+app.use("/account/favorites", favoriteRoute)
 // File Not Found Route - must be last route in list
 app.get("/error-trigger", utilities.handleErrors(baseController.triggerError));
 app.use(async (req, res, next) => {
