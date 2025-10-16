@@ -24,7 +24,7 @@ router.get(
   utilities.handleErrors(invController.buildAddClassificationView)
 );
 
-// Deliver "Add Inventory" view (Task 3 placeholder)
+// Deliver "Add Inventory" view 
 router.get(
   "/add-inventory",
   utilities.handleErrors(invController.buildAddInventoryView)
@@ -46,5 +46,29 @@ router.post(
   invValidate.checkInventoryData,
   utilities.handleErrors(invController.addInventory)
 );
+
+// Route to classification_id
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+// Route to build the Edit Inventory view (by inventory id)
+router.get('/edit/:inv_id', utilities.handleErrors(invController.buildEditInventoryView))
+
+// Route to handle the incoming requests
+router.post("/update/",
+  invValidate.inventoryRules(),
+  invValidate.checkUpdateData,
+  utilities.handleErrors(invController.updateInventory))
+
+// Route to build the Delete Inventory confirmation view (by inventory id)
+router.get(
+  "/delete/:inv_id",
+  utilities.handleErrors(invController.buildDeleteInventoryView)
+)
+
+// Route to perform the Delete Inventory action
+router.post(
+  "/delete",
+  utilities.handleErrors(invController.deleteInventory)
+)
 
 module.exports = router;

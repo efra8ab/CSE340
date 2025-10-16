@@ -7,6 +7,9 @@ const utilities = require('../utilities/');
 const { post } = require('./static');
 const regValidate = require("../utilities/account-validation");
 
+// default account management view (/account/)
+router.get('/', utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
+
 // route to build login section
 router.get('/login', utilities.handleErrors(accountController.buildLogin))
 // route to build registration 

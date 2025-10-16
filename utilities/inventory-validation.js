@@ -92,6 +92,53 @@ invValidate.checkInventoryData = async (req, res, next) => {
   next();
 };
 
+/* *********************************
+*  Errors will be directed back to the edit view
+* **********************************/
+invValidate.checkUpdateData = async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const nav = await utilities.getNav();
+
+    const {
+      inv_id,
+      classification_id,
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+    } = req.body;
+
+    const classificationSelect = await utilities.buildClassificationList(classification_id);
+
+    const title = `Edit ${inv_year} ${inv_make} ${inv_model}`;
+
+    return res.status(400).render("./inventory/edit-inventory", { 
+      title,
+      nav,
+      errors,
+      classificationSelect,
+      inv_id,
+      classification_id,
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+    });
+  }
+  next();
+};
+
 invValidate.checkClassificationData = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

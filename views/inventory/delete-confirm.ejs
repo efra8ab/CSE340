@@ -1,0 +1,54 @@
+<section class="add-inventory">
+    <h1>Delete Vehicle</h1>
+
+    <% if (locals && typeof messages==='function' ) { %>
+        <%- messages() %>
+            <% } %>
+
+                <p>Confirm Deletion — <strong>this action is permanent</strong> and cannot be undone.</p>
+
+                <% if (errors && ((errors.array && errors.array().length) || (Array.isArray(errors) && errors.length)))
+                    { %>
+                    <div class="errors" role="alert" aria-live="polite">
+                        <ul>
+                            <% (errors.array ? errors.array() : errors).forEach(function(e){ %>
+                                <li>
+                                    <%= e.msg || e %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <% } %>
+
+                        <!-- IMPORTANT: post to your delete route -->
+                        <form id="deleteForm" action="/inv/delete" method="post">
+                            <div class="field">
+                                <label for="inv_make">Make</label>
+                                <input id="inv_make" name="inv_make" type="text" readonly value="<%= inv_make %>">
+                            </div>
+
+                            <div class="field">
+                                <label for="inv_model">Model</label>
+                                <input id="inv_model" name="inv_model" type="text" readonly value="<%= inv_model %>">
+                            </div>
+
+                            <div class="field">
+                                <label for="inv_year">Year</label>
+                                <input id="inv_year" name="inv_year" type="number" readonly value="<%= inv_year %>">
+                            </div>
+
+                            <div class="field">
+                                <label for="inv_price">Price</label>
+                                <input id="inv_price" name="inv_price" type="number" step="0.01" readonly
+                                    value="<%= inv_price %>">
+                            </div>
+
+                            <!-- Keep the primary key hidden so the controller knows what to delete -->
+                            <input type="hidden" name="inv_id" value="<%= inv_id %>">
+
+                            <div class="actions">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <a href="/inv/" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </form>
+</section>

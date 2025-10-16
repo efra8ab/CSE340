@@ -2,15 +2,15 @@
   <h1 class="login-title"><%= title %></h1>
       <%- messages() %>
       
-        <% if (errors) { %>
-          <ul class="notice">
-            <% errors.array().forEach(error=> { %>
-              <li>
-                <%= error.msg %>
-              </li>
-              <% }) %>
-          </ul>
-          <% } %>
+      <% if (errors) { %>
+        <ul class="notice">
+          <% errors.array().forEach(error=> { %>
+            <li>
+              <%= error.msg %>
+            </li>
+            <% }) %>
+        </ul>
+        <% } %>
 
   <form action="/account/login" method="POST" class="login-form">
       <label for="email">Email:</label>

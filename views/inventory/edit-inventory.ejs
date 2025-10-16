@@ -1,0 +1,60 @@
+<section class="add-inventory">
+    <h1>Edit Vehicle</h1>
+
+    <!-- Flash messages -->
+    <% if (locals && typeof messages==='function' ) { %>
+        <%- messages() %>
+            <% } %>
+
+                <!-- Server-side validation errors -->
+                <% if (errors && ((errors.array && errors.array().length) || (Array.isArray(errors) && errors.length))) { %>
+                    <div class="errors" role="alert" aria-live="polite">
+                        <ul>
+                            <% (errors.array ? errors.array() : errors).forEach(function(e){ %>
+                                <li>
+                                    <%= e.msg || e %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <% } %>
+
+                        <form id="updateForm" action="/inv/update" method="post" novalidate>
+
+                        <label for="classification_id">Classification</label>
+                            <%- classificationSelect %>
+
+                        <label for="inv_make">Make</label>
+                            <input id="inv_make" name="inv_make" type="text" required minlength="2" maxlength="50" value="<%= inv_make %>" />
+
+                        <label for="inv_model">Model</label>
+                            <input id="inv_model" name="inv_model" type="text" required minlength="1" maxlength="50" value="<%= inv_model %>" />
+
+                        <label for="inv_year">Year</label>
+                            <input id="inv_year" name="inv_year" type="number" required min="1900" max="<%= new Date().getFullYear()+1 %>"
+                                value="<%= inv_year %>" />
+
+                        <label for="inv_description">Description</label>
+                            <textarea id="inv_description" name="inv_description" required minlength="8"><%= inv_description %></textarea>
+
+                        <label for="inv_image">Image Path/URL</label>
+                            <input id="inv_image" name="inv_image" type="text" required maxlength="255" value="<%= inv_image %>" />
+
+                        <label for="inv_thumbnail">Thumbnail Path/URL</label>
+                            <input id="inv_thumbnail" name="inv_thumbnail" type="text" required maxlength="255" value="<%= inv_thumbnail %>" />
+
+                        <label for="inv_price">Price</label>
+                            <input id="inv_price" name="inv_price" type="number" step="0.01" min="0" required value="<%= inv_price %>" />
+
+                        <label for="inv_miles">Miles</label>
+                            <input id="inv_miles" name="inv_miles" type="number" step="1" min="0" required value="<%= inv_miles %>" />
+
+                        <label for="inv_color">Color</label>
+                            <input id="inv_color" name="inv_color" type="text" required minlength="3" maxlength="50" value="<%= inv_color %>" />
+                            
+                        <button type="submit" disabled>Update Vehicle</button>
+                        <script src="/js/inv-update.js"></script>
+                        <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+                            <% } %>>
+                            </form>
+</section>

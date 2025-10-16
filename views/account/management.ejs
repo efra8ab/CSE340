@@ -1,0 +1,13 @@
+<% /* views/account/management.ejs */ %>
+<div class="management-container">
+  <h1><%= title %></h1>
+  <%- messages() %>
+  <% if (errors) { %>
+    <ul class="notice">
+      <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+  <p>You’re logged in</p>
+</div>
